@@ -9,8 +9,8 @@ export default function App() {
     <div className="App">
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Enter Salesforce Id</Form.Label>
-          <Form.Control type="text" placeholder="Enter email" />
+          <Form.Label>Salesforce Record Search</Form.Label>
+          <Form.Control type="text" placeholder="Enter Salesforce Id" />
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
