@@ -8,8 +8,8 @@ function getName() {
   return "Name: ";
 }
 
-const abc = "";
-const version = "2.3";
+const abc = [];
+const version = "2.4";
 
 export default function App() {
   return (
@@ -29,17 +29,28 @@ export default function App() {
   );
 
   function makeRequest(event) {
-    alert("hello1!");
     let response = "";
     event.preventDefault();
 
-    fetch("https://th-apex-http-callout.herokuapp.com/animals", {
+    fetch("https://jsonplaceholder.typicode.com/users", {
       //mode: "no-cors",
       //header: "Access-Control-Allow-Origin: *",
-      method: "GET"
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
     })
-      .then((json) => {
-        console.log(json);
+      //.then((json) => {
+      //  console.log(json);
+      //})
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((json) => {
+            console.log(json);
+            abc.push(json);
+            console.log(abc);
+          });
+        }
       })
 
       .catch((error) => {
