@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = "";
-const version = "1.9";
+const version = "2";
 
 export default function App() {
   return (
@@ -32,12 +32,19 @@ export default function App() {
     alert("hello!");
     let response = "";
 
-    fetch("https://th-apex-http-callout.herokuapp.com/animals").then(
-      function () {
-        (response) => response.json();
-        abc = response;
-      }
-    );
+    fetch("https://th-apex-http-callout.herokuapp.com/animals")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        alert("ba!");
+
+        /*this.setState({
+        Fajir: json.Fajir,
+        Sunrise: json.Sunrise,
+        Dhuhr: json.Dhuhr
+      });*/
+      });
 
     /*
     var xhr = new XMLHttpRequest();
