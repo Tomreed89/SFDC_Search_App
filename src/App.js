@@ -4,29 +4,41 @@ import Form from "react-bootstrap/Form";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+function getName() {
+  return "Name: ";
+}
+
+const abc = "";
+const version = "1.7";
+
 export default function App() {
   return (
     <div className="App">
       <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Salesforce Record Search!</Form.Label>
-          <Form.Control type="text" placeholder="Enter Salesforce Id" />
-          <Form.Text className="text-muted"></Form.Text>
-        </Form.Group>
+        <label>
+          {getName()}
+          <input type="text" />
+        </label>
         <Button onClick={makeRequest} variant="primary" type="submit">
           Submit!
         </Button>
       </Form>
+      {abc}
+      {"Version: " + version}
     </div>
   );
 
   function makeRequest() {
     alert("hello!");
 
-    $.get("https://th-apex-http-callout.herokuapp.com/animals", function (
-      responseText
-    ) {
-      alert(responseText);
+    $.ajax({
+      url: "/https://th-apex-http-callout.herokuapp.com/animals",
+      //data: {
+      // zipcode: 97201
+      //},
+      success: function (result) {
+        $("#abc").html(result);
+      }
     });
 
     /*
