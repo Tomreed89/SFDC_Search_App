@@ -13,7 +13,7 @@ export default function App() {
           <Form.Control type="text" placeholder="Enter Salesforce Id" />
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button onClick={makeRequest} variant="primary" type="submit">
           Submit!
         </Button>
       </Form>
@@ -21,8 +21,11 @@ export default function App() {
   );
 
   function makeRequest() {
+    data = [];
+    alert("Click!");
     fetch("https://th-apex-http-callout.herokuapp.com/animals")
       .then((response) => response.json())
       .then((data) => console.log(data));
+    alert(data);
   }
 }
