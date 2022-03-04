@@ -23,7 +23,9 @@ export default function App() {
   function makeRequest() {
     alert("hello!");
 
-    $.get("http://example.com", function (responseText) {
+    $.get("https://th-apex-http-callout.herokuapp.com/animals", function (
+      responseText
+    ) {
       alert(responseText);
     });
 
