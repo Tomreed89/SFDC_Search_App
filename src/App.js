@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = "";
-const version = "1.8";
+const version = "1.9";
 
 export default function App() {
   return (
@@ -30,13 +30,14 @@ export default function App() {
 
   function makeRequest() {
     alert("hello!");
+    let response = "";
 
-    fetch("https://th-apex-http-callout.herokuapp.com/animals")
-      .then((response) => response.json())
-      .then(
-        //data => console.log(data)
-        (abc = data)
-      );
+    fetch("https://th-apex-http-callout.herokuapp.com/animals").then(
+      function () {
+        (response) => response.json();
+        abc = response;
+      }
+    );
 
     /*
     var xhr = new XMLHttpRequest();
