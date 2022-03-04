@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = "";
-const version = "2";
+const version = "2.1";
 
 export default function App() {
   return (
@@ -37,7 +37,7 @@ export default function App() {
         return response.json();
       })
       .then((json) => {
-        alert("ba!");
+        console.log("Yes!");
 
         /*this.setState({
         Fajir: json.Fajir,
