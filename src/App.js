@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = "";
-const version = "1.7";
+const version = "1.8";
 
 export default function App() {
   return (
@@ -31,15 +31,12 @@ export default function App() {
   function makeRequest() {
     alert("hello!");
 
-    $.ajax({
-      url: "/https://th-apex-http-callout.herokuapp.com/animals",
-      //data: {
-      // zipcode: 97201
-      //},
-      success: function (result) {
-        $("#abc").html(result);
-      }
-    });
+    fetch("https://th-apex-http-callout.herokuapp.com/animals")
+      .then((response) => response.json())
+      .then(
+        //data => console.log(data)
+        (abc = data)
+      );
 
     /*
     var xhr = new XMLHttpRequest();
