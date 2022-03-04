@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = "";
-const version = "2.2";
+const version = "2.3";
 
 export default function App() {
   return (
@@ -28,24 +28,23 @@ export default function App() {
     </div>
   );
 
-  function makeRequest() {
-    alert("hello!");
+  function makeRequest(event) {
+    alert("hello1!");
     let response = "";
+    event.preventDefault();
 
     fetch("https://th-apex-http-callout.herokuapp.com/animals", {
-      mode: "no-cors"
+      //mode: "no-cors",
+      //header: "Access-Control-Allow-Origin: *",
+      method: "GET"
     })
-      .then((response) => {
-        return response.json();
-      })
       .then((json) => {
-        console.log("Yes!");
+        console.log(json);
+      })
 
-        /*this.setState({
-        Fajir: json.Fajir,
-        Sunrise: json.Sunrise,
-        Dhuhr: json.Dhuhr
-      });*/
+      .catch((error) => {
+        alert(error);
+        alert(response);
       });
 
     /*
