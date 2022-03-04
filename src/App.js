@@ -21,6 +21,7 @@ export default function App() {
   );
 
   function makeRequest() {
+    alert("hello!");
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://th-apex-http-callout.herokuapp.com/animals", true);
     xhr.onload = function (e) {

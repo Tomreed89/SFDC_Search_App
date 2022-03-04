@@ -7,7 +7,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <App />
-    Version 1.3
+    Version 1.4
   </StrictMode>,
   rootElement
 );
