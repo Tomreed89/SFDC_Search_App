@@ -22,6 +22,12 @@ export default function App() {
 
   function makeRequest() {
     alert("hello!");
+
+    $.get("http://example.com", function (responseText) {
+      alert(responseText);
+    });
+
+    /*
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://th-apex-http-callout.herokuapp.com/animals", true);
     xhr.onload = function (e) {
@@ -40,5 +46,6 @@ export default function App() {
       alert("C" + xhr.statusText);
     };
     xhr.send(null);
+    */
   }
 }
