@@ -11,6 +11,7 @@ function getName() {
 const abc = [];
 const version = "2.5";
 
+
 export default function App() {
   return (
     <div className="App">
@@ -23,7 +24,7 @@ export default function App() {
           Submit!
         </Button>
       </Form>
-      {abc}
+      <div id="varOne"> </div>
       {"Version: " + version}
     </div>
   );
@@ -40,15 +41,15 @@ export default function App() {
         Accept: "application/json"
       }
     })
-      //.then((json) => {
-      //  console.log(json);
-      //})
+
       .then((response) => {
         if (response.ok) {
           response.json().then((json) => {
             console.log(json);
             abc.push(json);
             console.log(abc);
+         
+            document.getElementById("varOne").innerHTML = json[0].name;
           });
         }
       })
@@ -58,25 +59,5 @@ export default function App() {
         alert(response);
       });
 
-    /*
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://th-apex-http-callout.herokuapp.com/animals", true);
-    xhr.onload = function (e) {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          //console.log(xhr.responseText);
-          alert("A" + xhr.responseText);
-        } else {
-          //console.error(xhr.statusText);
-          alert("B" + xhr.statusText);
-        }
-      }
-    };
-    xhr.onerror = function (e) {
-      //console.error(xhr.statusText);
-      alert("C" + xhr.statusText);
-    };
-    xhr.send(null);
-    */
   }
 }
