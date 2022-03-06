@@ -2,6 +2,7 @@ import "./styles.css";
 import Table from "react-bootstrap/Table";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { Component }  from 'react';
 
 var tableData;
 

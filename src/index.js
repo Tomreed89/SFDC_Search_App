@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-
+import React, { Component }  from 'react';
 import Nav from 'react-bootstrap/Nav'
 
 import App from "./App";
@@ -24,6 +24,8 @@ ReactDOM.render(
 <Nav.Link eventKey="link-2">Option 2</Nav.Link>
 </Nav.Item>
 </Nav>
+
+
 </StrictMode>,
 rootElement
 
