@@ -42,8 +42,8 @@ const oauth2 = new jsforce.OAuth2({
 // you can change loginUrl to connect to sandbox or prerelease env.
 loginUrl : "https://mycompany.my.salesforce.com",
 //clientId and Secret will be provided when you create a new connected app in your SF developer account
-clientId : "3MVG9Rd3qC6oMalVHG_.BLFwChwG7DsWJLuAXDAtDu7vOTqAcZjVGCTjNrXNxqr4xMQksl5EBJd2F.RUL8PM3",
-clientSecret : "8E5C0A0293758E27D88A827337B06E08EF64DD5E44620322564AC4BA2E19D43C",
+clientId : "",
+clientSecret : "",
 redirectUri : "http://localhost:3007/token"
 });
 */
