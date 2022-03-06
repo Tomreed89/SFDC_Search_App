@@ -9,7 +9,7 @@ function getName() {
 }
 
 const abc = [];
-const version = "2.5";
+const version = "2.6";
 
 
 export default function App() {
