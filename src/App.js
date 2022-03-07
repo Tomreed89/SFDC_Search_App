@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
+
 import React, { Component }  from 'react';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,7 +22,11 @@ export default function App() {
       <Form>
         <label> 
           {getName()}
-          <input type="text" />
+          <input id="userNameInput" type="text" />
+        </label>
+        <label> 
+          Password:
+          <input id="passInput" type="password" />
         </label>
         <Button onClick={makeRequest} variant="primary" type="submit">
           Submit!
@@ -29,24 +34,59 @@ export default function App() {
       </Form>
       <div id="varOne"> </div>
       {"Version: " + version}
+      
     </div>
   );
 
-  function makeRequest(event) {
+  function makeRequest(event) { 
     let response = "";
     event.preventDefault();
+   
 
-    /*
-//jsForce connection
-const oauth2 = new jsforce.OAuth2({
-// you can change loginUrl to connect to sandbox or prerelease env.
-loginUrl : "https://mycompany.my.salesforce.com",
-//clientId and Secret will be provided when you create a new connected app in your SF developer account
-clientId : "3MVG9Rd3qC6oMalVHG_.BLFwChwG7DsWJLuAXDAtDu7vOTqAcZjVGCTjNrXNxqr4xMQksl5EBJd2F.RUL8PM3",
-clientSecret : "8E5C0A0293758E27D88A827337B06E08EF64DD5E44620322564AC4BA2E19D43C",
-redirectUri : "http://localhost:3007/token"
-});
-*/
+    var passValue = document.getElementById("passInput").value;
+    var userNameValue = document.getElementById("userNameInput").value;
+
+    var uriValue = "https://login.salesforce.com/services/oauth2/token";
+
+
+    fetch(uriValue, {
+      //mode: "no-cors",
+      header: "grant_type=password",
+      header: "client_id=3MVG9Rd3qC6oMalVHG_.BLFwChwG7DsWJLuAXDAtDu7vOTqAcZjVGCTjNrXNxqr4xMQksl5EBJd2F.RUL8PM3" ,
+      header: "client_secret=c8E5C0A0293758E27D88A827337B06E08EF64DD5E44620322564AC4BA2E19D43C",
+      header: "username=tomreed89@googlemail.com" ,
+      header: "password=hywhA1-qidviv-vocgehbwpzVio6w3iDWVRmmz9kPwILr",
+      method: "POST",
+      headers: {
+        Accept: "application/json"
+      }
+    })
+
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((json) => {
+            console.log(json);
+            
+            console.log(abc);
+         
+            
+          });
+        }
+      })
+
+      .catch((error) => {
+        alert(error);
+        alert(response);
+      });
+
+
+
+
+
+
+
+
+
 
     fetch("https://jsonplaceholder.typicode.com/users", {
       //mode: "no-cors",
