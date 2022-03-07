@@ -13,7 +13,7 @@ function getName() {
 }
 
 const abc = [];
-const version = "2.7";
+const version = "2.8";
 
 
 export default function App() {
@@ -52,10 +52,10 @@ export default function App() {
     fetch(uriValue, {
       //mode: "no-cors",
       header: "grant_type=password",
-      header: "client_id=3MVG9Rd3qC6oMalVHG_.BLFwChwG7DsWJLuAXDAtDu7vOTqAcZjVGCTjNrXNxqr4xMQksl5EBJd2F.RUL8PM3" ,
-      header: "client_secret=c8E5C0A0293758E27D88A827337B06E08EF64DD5E44620322564AC4BA2E19D43C",
+      header: "client_id=" ,
+      header: "client_secret=",
       header: "username=tomreed89@googlemail.com" ,
-      header: "password=hywhA1-qidviv-vocgehbwpzVio6w3iDWVRmmz9kPwILr",
+      header: "password=",
       method: "POST",
       headers: {
         Accept: "application/json"
