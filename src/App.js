@@ -13,7 +13,7 @@ function getName() {
 }
 
 const abc = [];
-const version = "2.6";
+const version = "2.7";
 
 
 export default function App() {
