@@ -13,7 +13,7 @@ function getName() {
 }
 
 const abc = [];
-const version = "2.8";
+const version = "2.9";
 
 
 export default function App() {
@@ -46,48 +46,8 @@ export default function App() {
     var passValue = document.getElementById("passInput").value;
     var userNameValue = document.getElementById("userNameInput").value;
 
-    var uriValue = "https://login.salesforce.com/services/oauth2/token";
 
-
-    fetch(uriValue, {
-      //mode: "no-cors",
-      header: "grant_type=password",
-      header: "client_id=" ,
-      header: "client_secret=",
-      header: "username=tomreed89@googlemail.com" ,
-      header: "password=",
-      method: "POST",
-      headers: {
-        Accept: "application/json"
-      }
-    })
-
-      .then((response) => {
-        if (response.ok) {
-          response.json().then((json) => {
-            console.log(json);
-            
-            console.log(abc);
-         
-            
-          });
-        }
-      })
-
-      .catch((error) => {
-        alert(error);
-        alert(response);
-      });
-
-
-
-
-
-
-
-
-
-
+/*
     fetch("https://jsonplaceholder.typicode.com/users", {
       //mode: "no-cors",
       //header: "Access-Control-Allow-Origin: *",
@@ -113,6 +73,7 @@ export default function App() {
         alert(error);
         alert(response);
       });
+*/
 
   }
 }
